@@ -1,0 +1,19 @@
+{
+  "name": "masterclass-rate-limiting",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "pm2:prod": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1"
+  }
+}
