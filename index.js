@@ -1,7 +1,7 @@
 
 import express from 'express';
 import { readFile } from "fs";
-// import limiter from './src/middlewares/rate-limit.js';
+import limiter from './src/middlewares/rate-limit.js';
 
 const app = express();
 
@@ -22,17 +22,14 @@ app.get('/heavy-operation', (req, res) => {
 app.get('/clean-code-resume', (req, res) => {
   // Simula una operación intensiva
   const date = new Date();
-  readFile('clean-code.pdf', 'utf8', (err, data) => {
+  readFile('docs/03-nodejs.pdf', 'utf8', (err, data) => {
     if (err) {
       res.send('Error al leer el archivo');
     } else {
       const time = new Date() - date;
-      console.log(data.length);
       res.send(`Tarea intensiva realizada en ${time} ms, archivo de ${data.length} bytes`);
- 
     }
   });
-
 });
 
 app.get('/', (req, res) => {
