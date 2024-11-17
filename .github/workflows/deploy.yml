@@ -22,9 +22,9 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           passphrase: ${{ secrets.EC2_SSH_PASSPHRASE }}
 
-
           script: |
             cd demo-rate-limiting/betek-api-rate-limiting
-            npm install
             git pull origin develop
+            npm i
             npm start
+            pm2 ls

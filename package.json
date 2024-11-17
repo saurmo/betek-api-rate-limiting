@@ -4,8 +4,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "pm2 start src/index.js",
-    "pm2:prod": ""
+    "start": "pm2 reload src/index.js",
+    "pm2:prod": "pm2 start src/index.js"
   },
   "keywords": [],
   "author": "",
