@@ -1,10 +1,10 @@
 {
   "name": "masterclass-rate-limiting",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "pm2 start index.js",
+    "dev": "nodemon src/index.js",
+    "start": "pm2 start src/index.js",
     "pm2:prod": ""
   },
   "keywords": [],
