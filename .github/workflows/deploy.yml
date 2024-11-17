@@ -13,6 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Enable SSH Debug
+        run: export GIT_SSH_COMMAND="ssh -vvv"
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -26,8 +29,7 @@ jobs:
         with:
           host: ${{ secrets.EC2_HOST }}       
           username: ${{ secrets.EC2_USER }}   
-          key: ${{ secrets.EC2_SSH_KEY }}     
-          # passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          key: ${{ secrets.EC2_SSH_KEY }}
 
           script: |
             cd demo-rate-limiting
