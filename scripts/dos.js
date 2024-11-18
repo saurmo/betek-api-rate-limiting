@@ -1,11 +1,12 @@
 import axios from "axios";
 
-// const url = "http://ec2-3-138-247-63.us-east-2.compute.amazonaws.com:3000/clean-code-resume";
-const url = "http://localhost:3000/books/03-nodejs";
+const host = "ec2-3-138-247-63.us-east-2.compute.amazonaws.com";
+// const url = "localhost";
+const url = `http://${host}:3000/books/03-nodejs`;
 
 const masiveRequest = async () => {
   const requests = [];
-  const nroRequests = 100;
+  const nroRequests = 500;
   for (let i = 0; i < nroRequests; i++) {
     requests.push(axios.get(url));
   }
@@ -24,4 +25,5 @@ const masiveRequest = async () => {
     }
   }
 };
+
 masiveRequest();
