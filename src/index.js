@@ -5,6 +5,7 @@ import limiter from "./middleware/rate-limit.js";
 const app = express();
 
 app.use(limiter)
+//middleare
 
 // Aplicar middleware para archivos estáticos
 app.use("/docs", express.static("docs"));
