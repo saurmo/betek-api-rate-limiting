@@ -1,7 +1,10 @@
 import express from "express";
 import { readFile } from "fs";
+import limiter from "./middleware/rate-limit.js";
 
 const app = express();
+
+app.use(limiter)
 
 // Aplicar middleware para archivos estáticos
 app.use("/docs", express.static("docs"));
