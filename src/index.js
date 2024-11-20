@@ -1,11 +1,7 @@
 import express from "express";
 import { readFile } from "fs";
-import limiter from "./middleware/rate-limit.js";
 
 const app = express();
-
-// Aplicar el middleware a todas las rutas
-app.use(limiter);
 
 /**
  * Endpoint de ejemplo que simula una tarea intensiva
