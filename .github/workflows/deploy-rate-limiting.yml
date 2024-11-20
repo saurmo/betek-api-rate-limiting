@@ -23,7 +23,7 @@ jobs:
           passphrase: ${{ secrets.EC2_SSH_PASSPHRASE }}
 
           script: |
-            cd demo-rate-limiting/rate-limiting
+            cd demo-rate-limiting/rate-liminting
             git pull origin feat/rate-limiting
             npm i
             npm start
