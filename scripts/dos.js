@@ -1,4 +1,11 @@
 import axios from "axios";
+import winston from "winston";
+
+const logger = winston.createLogger({
+  transports: [
+    new winston.transports.File({ filename: 'logs/dos.log', level: 'info' }),
+  ]
+});
 
 const host = "ec2-3-138-247-63.us-east-2.compute.amazonaws.com";
 // const url = "localhost";
@@ -17,11 +24,11 @@ const masiveRequest = async () => {
   for (let index = 0; index < result.length; index++) {
     const resultPromise = result[index];
     if (resultPromise.status === "fulfilled") {
-      console.log(index, resultPromise.value.data);
+      logger.info(resultPromise.value.data);
     } else {
       const error = resultPromise.reason;
       const response = error?.response;
-      console.log(response ? `Error ${response.status}: ${response.data}` : error.code);
+      logger.info(response ? `Error ${response.status}: ${response.data}` : error.code);
     }
   }
 };
