@@ -24,7 +24,7 @@ jobs:
 
           script: |
             cd demo-rate-limiting/betek-api-rate-limiting
-            git pull origin develop
+            git pull origin feat/rate-limiting
             npm i
             npm start
             pm2 ls
