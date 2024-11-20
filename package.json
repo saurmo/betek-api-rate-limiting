@@ -8,6 +8,7 @@
     "pm2:prod": "pm2 start src/index.js"
   },
   "keywords": [],
+  "types": "module",
   "author": "",
   "license": "ISC",
   "description": "",
