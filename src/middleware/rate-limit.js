@@ -2,8 +2,8 @@ import rateLimit from 'express-rate-limit';
 
 // Configuración del rate limit
 const limiter = rateLimit({
-  windowMs: 1 * 60 * 1000, // 15 minutos
-  max: 5, // Límite de 100 solicitudes por IP
+  windowMs: 1 * 60 * 1000, // Ventana de tiempo minutos
+  max: 5, // Límite de solicitudes por IP
   message: 'Demasiadas solicitudes, intente nuevamente más tarde.'
 });
 
